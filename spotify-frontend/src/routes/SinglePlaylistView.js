@@ -7,7 +7,7 @@ import SingleSongCard from "../components/shared/SingleSongCard";
 const SinglePlaylistView = () => {
     const [playlistDetails, setPlaylistDetails] = useState({});
     const {playlistId} = useParams();
-
+    console.log("****************************************************************entered************************************************************");
     useEffect(() => {
         const getData = async () => {
             const response = await makeAuthenticatedGETRequest(
@@ -17,7 +17,7 @@ const SinglePlaylistView = () => {
             console.log(response);
         };
         getData();
-    }, []);
+    }, [playlistId]);
 
     return (
         <LoggedInContainer curActiveScreen={"library"}>
@@ -28,7 +28,9 @@ const SinglePlaylistView = () => {
                     </div>
                     <div className="pt-10 space-y-3">
                         {playlistDetails.songs.map((item) => {
+                            console.log(item);
                             return (
+                                
                                 <SingleSongCard
                                     info={item}
                                     key={JSON.stringify(item)}

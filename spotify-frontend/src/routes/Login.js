@@ -18,6 +18,7 @@ const LoginComponent = () => {
             "/auth/login",
             data
         );
+        console.log(response);
         if (response && !response.err) {
             const token = response.token;
             const date = new Date();
@@ -26,6 +27,7 @@ const LoginComponent = () => {
             alert("Success");
             navigate("/home");
         } else {
+
             alert("Failure");
         }
     };

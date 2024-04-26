@@ -28,6 +28,7 @@ const SignupComponent = () => {
             "/auth/register",
             data
         );
+        
         if (response && !response.err) {
             const token = response.token;
             const date = new Date();
