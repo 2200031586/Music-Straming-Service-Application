@@ -58,9 +58,10 @@ router.get(
     async (req, res) => {
         const artistId = req.user._id;
 
-        const playlists = await Playlist.find({owner: artistId}).populate(
-            "owner"
-        );
+        // const playlists = await Playlist.find({owner: artistId}).populate(
+        //     "owner"
+        // );
+        const playlists = await Playlist.find();
         return res.status(200).json({data: playlists});
     }
 );

@@ -24,6 +24,7 @@ const LoginComponent = () => {
             const date = new Date();
             date.setDate(date.getDate() + 30);
             setCookie("token", token, {path: "/", expires: date});
+            setCookie("role", "user", {path: "/", expires: date});
             alert("Success");
             navigate("/home");
         } else {
@@ -43,8 +44,8 @@ const LoginComponent = () => {
                     To continue, log in to Spotify.
                 </div>
                 <TextInput
-                    label="Email address or username"
-                    placeholder="Email address or username"
+                    label="Email address"
+                    placeholder="Email address"
                     className="my-6"
                     value={email}
                     setValue={setEmail}

@@ -9,6 +9,7 @@ import CreatePlaylistModal from "../modals/CreatePlaylistModal";
 import AddToPlaylistModal from "../modals/AddToPlaylistModal";
 import {makeAuthenticatedPOSTRequest} from "../utils/serverHelpers";
 import UploadSongLink from "../components/UploadSongLink";
+import Logout from "../components/Logout";
 
 const LoggedInContainer = ({children, curActiveScreen}) => {
     const [createPlaylistModalOpen, setCreatePlaylistModalOpen] =
@@ -145,13 +146,13 @@ const LoggedInContainer = ({children, curActiveScreen}) => {
                             />
                         </div>
                         <div className="pt-5">
-                            <IconText
+                            {/* <IconText
                                 iconName={"material-symbols:add-box"}
                                 displayText={"Create Playlist"}
                                 onClick={() => {
                                     setCreatePlaylistModalOpen(true);
                                 }}
-                            />
+                            /> */}
                             <IconText
                                 iconName={"mdi:cards-heart"}
                                 displayText={"Liked Songs"}
@@ -178,11 +179,13 @@ const LoggedInContainer = ({children, curActiveScreen}) => {
                                 <div className="h-1/2 border-r border-white"></div>
                             </div>
                             <div className="w-1/3 flex justify-around h-full items-center">
-                                <UploadSongLink targetLink={"/uploadSong"} />
+                                {/* <UploadSongLink targetLink={"/uploadSong"} /> */}
+                                <Logout />
                                 <div className="bg-white w-10 h-10 flex items-center justify-center rounded-full font-semibold cursor-pointer">
                                     AC
                                 </div>
                             </div>
+
                         </div>
                     </div>
                     <div className="content p-8 pt-0 overflow-auto">
@@ -203,11 +206,11 @@ const LoggedInContainer = ({children, curActiveScreen}) => {
                             <div className="text-sm hover:underline cursor-pointer">
                                 {currentSong.name}
                             </div>
-                            <div className="text-xs text-gray-500 hover:underline cursor-pointer">
+                            {/* <div className="text-xs text-gray-500 hover:underline cursor-pointer">
                                 {currentSong.artist.firstName +
                                     " " +
                                     currentSong.artist.lastName}
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                     <div className="w-1/2 flex justify-center h-full flex-col items-center">

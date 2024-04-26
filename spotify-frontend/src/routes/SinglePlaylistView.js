@@ -18,7 +18,8 @@ const SinglePlaylistView = () => {
         };
         getData();
     }, [playlistId]);
-
+    console.log(playlistId);
+    console.log(playlistDetails);
     return (
         <LoggedInContainer curActiveScreen={"library"}>
             {playlistDetails._id && (
